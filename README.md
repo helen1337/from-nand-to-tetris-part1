@@ -2,7 +2,7 @@
 
 in this repository I implement all the tasks from the course Build a Modern Computer from First Principles: From Nand to Tetris (Project-Centered Course).
 
-# projects
+# projects tasks
 <details>
 
 <summary>project1 : Boolean Logic</summary>
@@ -266,4 +266,111 @@ else if (sel==111) then {a, b, c,…, h} = {0,0,0,0,0,0,0,1}
 |1|1|0|0|0|0|0|0|0|in|0|
 |1|1|1|0|0|0|0|0|0|0|in|
 
+</details>
+
+<details>
+
+<summary>project2 : Boolean Arithmetic</summary>
+
+## HalfAdder
+Chip name: `HalfAdder`
+
+ Input:     `a, b`
+ 
+ Output:    `sum, carry`
+
+ Function: `sum = LSB of a + b; carry = MSB of a + b`
+
+|a|b|carry|sum|
+|-|-|-|-|
+|0|0|0|0|
+|0|1|0|1|
+|1|0|0|1|
+|1|1|1|0|
+
+## FullAdder
+
+Chip name: `FullAdder`
+
+Input: `a, b, c`
+
+Output: `sum, carry`
+
+Function: `sum = LSB of a + b + c; carry = MSB of a + b + c`
+
+|a|b|c|carry|sum|
+|-|-|-|-|-|
+|0|0|0|0|0|
+|0|0|1|0|1|
+|0|1|0|0|1|
+|0|1|1|1|0|
+|1|0|0|0|1|
+|1|0|1|1|0|
+|1|1|0|1|0|
+|1|1|1|1|1|
+
+## Add16
+
+Chip name: `Add16`
+
+ Input:     `a[16], b[16]`
+
+ Output:    `out[16]`
+
+ Function:  `Adds two 16-bit numbers.
+           The overflow bit is ignored.`
+
+## Inc16
+ Chip name: `Inc16`
+
+ Input: `in[16]`
+
+ Output: `out[16]`
+
+ Function: `out = in + 1. The overflow bit is ignored.`
+
+## ALU
+
+Chip name: `ALU`
+
+Input: `x[16], y[16], zx, nx, zy, ny, f, no`
+
+Output: `out[16], zr, ng`
+
+Function:
+```
+if zx x=0
+if nx x!=0
+if zy y=0
+if ny y=!y
+if f out=x+y, else out=x&y
+if out==0 zr=1, else zr=0
+if out<0 ng=1, else ng=0
+The overflow bit is ignored.
+```
+
+|if zx then x=0|if nx then x=!x|if zy then y=0|if ny then y!=y|if f then out=x+y else out=x&y|if no then out!=out|out(x,y)=|
+|-|-|-|-|-|-|-|
+| 1 | 0 | 1 | 0 | 1 | 0 | 0 |
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 1 | 1 | 1 | 0 | 1 | 0 | -1 |
+| 0 | 0 | 1 | 1 | 0 | 0 | x |
+| 1 | 1 | 0 | 0 | 0 | 0 | y |
+| 0 | 0 | 1 | 1 | 0 | 1 | !x |
+| 1 | 1 | 0 | 0 | 0 | 1 | !y |
+| 0 | 0 | 1 | 1 | 1 | 1 | -x |
+| 1 | 1 | 0 | 0 | 1 | 1 | -y |
+| 0 | 1 | 1 | 1 | 1 | 1 | x+1 |
+| 1 | 1 | 0 | 1 | 1 | 1 | y+1 |
+| 0 | 0 | 1 | 1 | 1 | 0 | x-1 |
+| 1 | 1 | 0 | 0 | 1 | 0 | y-1 |
+| 0 | 0 | 0 | 0 | 1 | 0 | x+y |
+| 0 | 1 | 0 | 0 | 1 | 1 | x-y |
+| 0 | 0 | 0 | 1 | 1 | 1 | y-x |
+| 0 | 0 | 0 | 0 | 0 | 0 | x&y |
+| 0 | 1 | 0 | 1 | 0 | 1 | x|y |
+
+> if (out==0) zr=1, else zr=0
+
+> if (out<0) ng=1, else ng=0
 </details>
