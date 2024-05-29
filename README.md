@@ -349,7 +349,7 @@ if out<0 ng=1, else ng=0
 The overflow bit is ignored.
 ```
 
-|if zx then x=0|if nx then x=!x|if zy then y=0|if ny then y!=y|if f then out=x+y else out=x&y|if no then out!=out|out(x,y)=|
+|if zx then x=0|if nx then x=!x|if zy then y=0|if ny then y!=y|if f then out=x+y else out=x&y|if no then out!=out|out(x,y)|
 |-|-|-|-|-|-|-|
 | 1 | 0 | 1 | 0 | 1 | 0 | 0 |
 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
