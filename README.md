@@ -54,7 +54,7 @@ Function: `if ((a==1) and (b==1)) then out = 1, else out = 0`
 |1|1|1|
 
 My implementation:
-![AND]([https://github.com/helen1337/from-nand-to-tetris/blob/main/image/AND.md](https://github.com/helen1337/from-nand-to-tetris/blob/main/image/AND.md))
+![AND](image/ABD.png)
 
 ## Or
 Chip name: `Or`
