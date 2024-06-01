@@ -159,6 +159,10 @@ My implementation:
  
  Function: `for i = 0..15 out[i] = Not(in[i])`
 
+My implementation:
+
+![NOT16](image/NOT16.png)
+
 ## And16
 Chip name: `And16`
 
@@ -168,6 +172,10 @@ Chip name: `And16`
  
  Function: `for i = 0..15 out[i] = And(a[i], b[i])`
 
+My implementation:
+
+![AND16](image/AND16.png)
+
 ## Or16
 Chip name: `Or16`
 
@@ -176,6 +184,10 @@ Chip name: `Or16`
  Output: `out[16]`
  
  Function: `for i = 0..15 out[i] = Or(a[i], b[i])`
+
+My implementation:
+
+![OR16](image/OR16.png)
 
 ## Mux16
 Chip name: `Mux16`
@@ -187,6 +199,10 @@ Chip name: `Mux16`
  Function: `if (sel==0) then for i = 0..15 out[i] = a[i],
  else for i = 0..15 out[i] = b[i]`
  
+My implementation:
+
+![MUX16](image/MUX16.png)
+
 ## Or8Way
 Chip name: `Or8Way`
 
@@ -195,6 +211,10 @@ Chip name: `Or8Way`
  Output: `out`
  
  Function: `out = Or(in[0], in[1],…, in[7])`
+
+My implementation:
+
+![Or8Way](image/Or8Way.png)
 
 ## Mux4Way16
  Chip name: `Mux4Way16`
@@ -215,6 +235,10 @@ out[i] = a[i]"`
 |0|1|b|
 |1|0|c|
 |1|1|d|
+
+My implementation:
+
+![Mux4Way16](image/Mux4Way16.png)
 
 ## Mux8Way16
  Chip name: `Mux8Way16`
@@ -242,6 +266,10 @@ out[i] = a[i]".`
 |1|1|0|g|
 |1|1|1|h|
 
+My implementation:
+
+![Mux8Way16](image/Mux8Way16.png)
+
 ## DMux4Way
 Chip name: `DMux4Way`
 
@@ -264,7 +292,11 @@ if (sel==00) then {a, b, c, d} = {1,0,0,0},
 |1|0|0|0|in|0|
 |1|1|0|0|0|im|
 
-DMux8Way
+My implementation:
+
+![DMux4Way](image/DMux4Way.png)
+
+## DMux8Way
 Chip name: `Dmux8Way`
 
  Input: `in, sel[3]`
@@ -289,6 +321,10 @@ else if (sel==111) then {a, b, c,…, h} = {0,0,0,0,0,0,0,1}
 |1|0|1|0|0|0|0|0|in|0|0|
 |1|1|0|0|0|0|0|0|0|in|0|
 |1|1|1|0|0|0|0|0|0|0|in|
+
+My implementation:
+
+![DMux8Way](image/DMux8Way.png)
 
 </details>
 
