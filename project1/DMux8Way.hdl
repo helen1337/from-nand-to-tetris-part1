@@ -19,13 +19,8 @@ CHIP DMux8Way {
 
     PARTS:
     DMux4Way(in=in,sel[0..1]=sel[0..1],a=outa,b=outb,c=outc,d=outd);
-    DMux4Way(in=in,sel[0..1]=sel[0..1],a=oute,b=outf,c=outg,d=outh);
-    And(a=outa,b=oute,out=outae);
-    And(a=outb,b=outf,out=outbf);
-    And(a=outc,b=outg,out=outcg);
-    And(a=outd,b=outh,out=outdh);
-    DMux(in=outae,sel=sel[2],a=a,b=e);
-    DMux(in=outbf,sel=sel[2],a=b,b=f);
-    DMux(in=outcg,sel=sel[2],a=c,b=g);
-    DMux(in=outdh,sel=sel[2],a=d,b=h);
+    DMux(in=outa,sel=sel[2],a=a,b=e);
+    DMux(in=outb,sel=sel[2],a=b,b=f);
+    DMux(in=outc,sel=sel[2],a=c,b=g);
+    DMux(in=outd,sel=sel[2],a=d,b=h);
     }
