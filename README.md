@@ -54,7 +54,7 @@ Function: `if ((a==1) and (b==1)) then out = 1, else out = 0`
 |1|1|1|
 
 My implementation:
-![AND](image/ABD.png)
+![AND](image/AND.png)
 
 ## Or
 Chip name: `Or`
