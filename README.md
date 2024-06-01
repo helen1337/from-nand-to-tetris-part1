@@ -37,6 +37,10 @@ Function: `if (in==0) then out = 1, else out = 0`
 |0|1|
 |1|0|
 
+My implementation:
+
+![NOT](image/NOT.png)
+
 ## And
 Chip name: `And`
 
@@ -54,6 +58,7 @@ Function: `if ((a==1) and (b==1)) then out = 1, else out = 0`
 |1|1|1|
 
 My implementation:
+
 ![AND](image/AND.png)
 
 ## Or
@@ -72,6 +77,10 @@ Chip name: `Or`
 |1|0|1|
 |1|1|1|
 
+My implementation:
+
+![or](image/OR.png)
+
 ## Xor
  Chip name: `Xor`
  
@@ -87,6 +96,10 @@ Chip name: `Or`
 |0|1|1|
 |1|0|1|
 |1|1|0|
+
+My implementation:
+
+![XOR](image/XOR.png)
 
 ## Mux
 Chip name: `Mux`
@@ -113,6 +126,10 @@ sel|out|
 |0|a|
 |1|b|
 
+My implementation:
+
+![MUX](image/MUX.png)
+
 ## DMux
  Chip name: `DMux`
  
@@ -129,6 +146,10 @@ sel|out|
 |   1   |   0   |   1   |   0   |
 |   1   |   1   |   0   |   1   |
  
+My implementation:
+
+![DMUX](image/DMUX.png)
+
 ## Not16
  Chip name: `Not16`
  
