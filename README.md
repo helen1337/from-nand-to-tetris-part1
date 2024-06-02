@@ -459,7 +459,7 @@ The overflow bit is ignored.
 
 <summary>project3 : Memory</summary>
 
-### DFF (given)
+## DFF (given)
 
  Chip name: `DFF`
 
@@ -476,7 +476,7 @@ implementation and thus there is
 no need to implement it.
 ```
 
-### Bit
+## Bit
 
  Chip name: `Bit`
 
@@ -490,23 +490,43 @@ no need to implement it.
 
 ![Bit](image/Bit.png)
 
-### Register
+## Register
 
- Chip name: `Register`
+Chip name: `Register`
 
- Input: `in[16], load`
+Input: `in[16], load`
 
- Output: `ou[16]t`
+Output: `out[16]`
 
- Function: `If load(t-1) then out(t)\in(t-1) else out(t)\out(t-1)`
+Function: `If load(t-1) then out(t)\in(t-1) else out(t)\out(t-1)`
 
 Comment: `"\" - is a 16-bit operation.`
 
+### My implementation:
+
+![Register](image/Register.png)
+
+## RAM8
+
+Chip name: `RAMn // n and k are listed below`
+
+Input: `in[16], address[k], load`
+
+Output: `out[16]`
+
+Function: 
+```
+out(t)=RAM[address(t)](t)
+If load(t-1) then
+ RAM[address(t-1)](t)\in(t-1)
+```
+
+Comment: `"\" - is a 16-bit operation.`
 
 ### My implementation:
 
-![Bit](image/Bit.png)
-### RAM8
+![Register](image/Register.png)
+
 ### RAM64
 ### RAM512
 ### RAM4K
