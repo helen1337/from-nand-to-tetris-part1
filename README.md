@@ -388,6 +388,10 @@ Chip name: `Add16`
  Function:  `Adds two 16-bit numbers.
            The overflow bit is ignored.`
 
+### My implementation:
+
+![ADD16](image/ADD16.png)
+
 ## Inc16
  Chip name: `Inc16`
 
