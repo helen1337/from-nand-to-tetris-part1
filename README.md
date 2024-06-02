@@ -37,7 +37,7 @@ Function: `if (in==0) then out = 1, else out = 0`
 |0|1|
 |1|0|
 
-My implementation:
+### My implementation:
 
 ![NOT](image/NOT.png)
 
@@ -57,7 +57,7 @@ Function: `if ((a==1) and (b==1)) then out = 1, else out = 0`
 |1|0|0|
 |1|1|1|
 
-My implementation:
+### My implementation:
 
 ![AND](image/AND.png)
 
@@ -77,7 +77,7 @@ Chip name: `Or`
 |1|0|1|
 |1|1|1|
 
-My implementation:
+### My implementation:
 
 ![or](image/OR.png)
 
@@ -97,7 +97,7 @@ My implementation:
 |1|0|1|
 |1|1|0|
 
-My implementation:
+### My implementation:
 
 ![XOR](image/XOR.png)
 
@@ -126,7 +126,7 @@ sel|out|
 |0|a|
 |1|b|
 
-My implementation:
+### My implementation:
 
 ![MUX](image/MUX.png)
 
@@ -146,7 +146,7 @@ My implementation:
 |   1   |   0   |   1   |   0   |
 |   1   |   1   |   0   |   1   |
  
-My implementation:
+### My implementation:
 
 ![DMUX](image/DMUX.png)
 
@@ -159,7 +159,7 @@ My implementation:
  
  Function: `for i = 0..15 out[i] = Not(in[i])`
 
-My implementation:
+### My implementation:
 
 ![NOT16](image/NOT16.png)
 
@@ -172,7 +172,7 @@ Chip name: `And16`
  
  Function: `for i = 0..15 out[i] = And(a[i], b[i])`
 
-My implementation:
+### My implementation:
 
 ![AND16](image/AND16.png)
 
@@ -185,7 +185,7 @@ Chip name: `Or16`
  
  Function: `for i = 0..15 out[i] = Or(a[i], b[i])`
 
-My implementation:
+### My implementation:
 
 ![OR16](image/OR16.png)
 
@@ -199,7 +199,7 @@ Chip name: `Mux16`
  Function: `if (sel==0) then for i = 0..15 out[i] = a[i],
  else for i = 0..15 out[i] = b[i]`
  
-My implementation:
+### My implementation:
 
 ![MUX16](image/MUX16.png)
 
@@ -212,7 +212,7 @@ Chip name: `Or8Way`
  
  Function: `out = Or(in[0], in[1],…, in[7])`
 
-My implementation:
+### My implementation:
 
 ![Or8Way](image/Or8Way.png)
 
@@ -236,7 +236,7 @@ out[i] = a[i]"`
 |1|0|c|
 |1|1|d|
 
-My implementation:
+### My implementation:
 
 ![Mux4Way16](image/Mux4Way16.png)
 
@@ -266,7 +266,7 @@ out[i] = a[i]".`
 |1|1|0|g|
 |1|1|1|h|
 
-My implementation:
+### My implementation:
 
 ![Mux8Way16](image/Mux8Way16.png)
 
@@ -292,7 +292,7 @@ if (sel==00) then {a, b, c, d} = {1,0,0,0},
 |1|0|0|0|in|0|
 |1|1|0|0|0|im|
 
-My implementation:
+### My implementation:
 
 ![DMux4Way](image/DMux4Way.png)
 
@@ -322,7 +322,7 @@ else if (sel==111) then {a, b, c,…, h} = {0,0,0,0,0,0,0,1}
 |1|1|0|0|0|0|0|0|0|in|0|
 |1|1|1|0|0|0|0|0|0|0|in|
 
-My implementation:
+### My implementation:
 
 ![DMux8Way](image/DMux8Way.png)
 
@@ -348,7 +348,7 @@ Chip name: `HalfAdder`
 |1|0|0|1|
 |1|1|1|0|
 
-My implementation:
+### My implementation:
 
 ![HalfAdder](image/HalfAdder.png)
 
@@ -373,7 +373,7 @@ Function: `sum = LSB of a + b + c; carry = MSB of a + b + c`
 |1|1|0|1|0|
 |1|1|1|1|1|
 
-My implementation:
+### My implementation:
 
 ![FullAdder](image/FullAddr.png)
 
@@ -397,7 +397,7 @@ Chip name: `Add16`
 
  Function: `out = in + 1. The overflow bit is ignored.`
 
-My implementation:
+### My implementation:
 
 ![Inc16](image/Inc16.png)
 
@@ -421,7 +421,7 @@ if out<0 ng=1, else ng=0
 The overflow bit is ignored.
 ```
 
-My implementation:
+### My implementation:
 
 ![ALU](image/ALU.png)
 
@@ -449,4 +449,117 @@ My implementation:
 > if (out==0) zr=1, else zr=0
 
 > if (out<0) ng=1, else ng=0
+</details>
+
+<details>
+
+<summary>project5 : Computer Architecture</summary>
+
+## Memory 
+
+Chip name: `Memory`
+
+Input:
+```
+in[16],         // Complete memory address space
+load,           // What to write
+address[15]     // Where to write
+```
+
+Output:
+```
+out[16]         // Memory value at the given address
+```
+
+Function:
+```
+1. out(1)=Memory[address(t)](t)
+2. If load(t-1) then emory[address(t-1)](t)=in(t-1)
+(t is the current time unit, or cycle)
+```
+
+Comment:
+```
+Access to any address>24576 (0x6000) is invalid.
+Access to any address in the range 16384-24575
+(0x4000-0x5FFF) results in accessing the screen 
+memory map. Access to address 24576 (0x6000) results
+in accessing the keyboard memory map. The behavior
+in these address is described in the Screen and
+Keyboard chip specifications.
+```
+
+### My implementation:
+
+![Memory](image/Memory.png)
+
+## CPU 
+
+Chip name: `CPU`
+
+Input:
+```
+inM[16],                   // M value input (M = contents of RAM[A])
+instruction[16],           // Instruction for execution
+reset                      // Signals whether to restart the current 
+                           // program (reset-1) or continue executing
+                           // the current program (reset=0) 
+```
+
+Output:
+```
+outM[16],         // M value output
+writeM,           // Write to M?
+addressM[15],     // Address of M in data memory
+pc[15],           // Address of next instruction
+```
+
+Function:
+```
+Executes the instruction according to the Hack machine language
+specification. The D and A in the language specification refer to
+CPU-resident registers, while M refers to the memory location
+addressed by A (inM holds the value of this location).
+
+If the instruction needs to write a value to M, the value is
+placed in outM, the address is placed in addressM, and the wtiteM
+bit is asserted. (When writeM=0, any value may appear in outM.)
+
+If reset=1, then the CPU jumps to address 0 (i.c., sets pc=0 in
+the next time unit) rather than to the address resulting from
+executing the current instruction.
+```
+
+### My implementation:
+
+![CPU](image/CPU.png)
+
+## Computer 
+
+Chip name: `Computer`
+
+Input:
+```
+reset
+```
+
+Function:
+```
+When reset is 0, the program stored in the computer's
+ROM executes. When reset is 1, the execution of the
+program restarts. Thus, to start a program's
+execution, reset must be pushed "up" (1) and then
+"down" (0).
+
+From this point onward the user is at the mercy of
+the software. In particular, depending on the
+program's code, the screen may show some output and
+the user may be able to interact with the computer
+via the keyboard.
+```
+
+### My implementation:
+
+![Computer](image/Computer.png)
+
 </details>
