@@ -498,7 +498,9 @@ no need to implement it.
 
  Output: `ou[16]t`
 
- Function: `If load(t-1) then out(t)=in(t-1) else out(t)=out(t-1)`
+ Function: `If load(t-1) then out(t)\in(t-1) else out(t)\out(t-1)`
+
+Comment: `"\" - is a 16-bit operation.`
 
 
 ### My implementation:
