@@ -476,25 +476,34 @@ implementation and thus there is
 no need to implement it.
 ```
 
-### My implementation:
-
-![Inc16](image/Inc16.png)
-
 ### Bit
 
- Chip name: `Inc16`
+ Chip name: `Bit`
 
- Input: `in[16]`
+ Input: `in, load`
 
- Output: `out[16]`
+ Output: `out`
 
- Function: `out = in + 1. The overflow bit is ignored.`
+ Function: `If load(t-1) then out(t)=in(t-1) else out(t)=out(t-1)`
 
 ### My implementation:
 
-![Inc16](image/Inc16.png)
+![Bit](image/Bit.png)
 
 ### Register
+
+ Chip name: `Register`
+
+ Input: `in[16], load`
+
+ Output: `ou[16]t`
+
+ Function: `If load(t-1) then out(t)=in(t-1) else out(t)=out(t-1)`
+
+
+### My implementation:
+
+![Bit](image/Bit.png)
 ### RAM8
 ### RAM64
 ### RAM512
