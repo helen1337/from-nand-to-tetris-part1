@@ -348,6 +348,10 @@ Chip name: `HalfAdder`
 |1|0|0|1|
 |1|1|1|0|
 
+My implementation:
+
+![HalfAdder](image/HalfAdder.png)
+
 ## FullAdder
 
 Chip name: `FullAdder`
@@ -369,6 +373,10 @@ Function: `sum = LSB of a + b + c; carry = MSB of a + b + c`
 |1|1|0|1|0|
 |1|1|1|1|1|
 
+My implementation:
+
+![FullAdder](image/FullAddr.png)
+
 ## Add16
 
 Chip name: `Add16`
@@ -389,6 +397,10 @@ Chip name: `Add16`
 
  Function: `out = in + 1. The overflow bit is ignored.`
 
+My implementation:
+
+![Inc16](image/Inc16.png)
+
 ## ALU
 
 Chip name: `ALU`
@@ -408,6 +420,10 @@ if out==0 zr=1, else zr=0
 if out<0 ng=1, else ng=0
 The overflow bit is ignored.
 ```
+
+My implementation:
+
+![ALU](image/ALU.png)
 
 |if zx then x=0|if nx then x=!x|if zy then y=0|if ny then y!=y|if f then out=x+y else out=x&y|if no then out!=out|out(x,y)|
 |-|-|-|-|-|-|-|
