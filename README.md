@@ -525,6 +525,9 @@ Comment: `"\" is a 16-bit operation.`
 
 ### My implementation:
 
+### RAM8
+![RAM8](image/RAM8.png)
+
 ### RAM64
 ![RAM64](image/RAM64.png)
 
