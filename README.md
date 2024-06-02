@@ -500,13 +500,13 @@ Output: `out[16]`
 
 Function: `If load(t-1) then out(t)\in(t-1) else out(t)\out(t-1)`
 
-Comment: `"\" - is a 16-bit operation.`
+Comment: `"\" is a 16-bit operation.`
 
 ### My implementation:
 
 ![Register](image/Register.png)
 
-## RAM8
+## RAMn
 
 Chip name: `RAMn // n and k are listed below`
 
@@ -521,17 +521,43 @@ If load(t-1) then
  RAM[address(t-1)](t)\in(t-1)
 ```
 
-Comment: `"\" - is a 16-bit operation.`
+Comment: `"\" is a 16-bit operation.`
 
 ### My implementation:
 
-![Register](image/Register.png)
-
 ### RAM64
+![RAM64](image/RAM64.png)
+
 ### RAM512
+![RAM512](image/RAM512.png)
+
 ### RAM4K
+![RAM4K](image/RAM4K.png)
+
 ### RAM16K
-### PC
+![RAM4K](image/RAM4K.png)
+
+## PC
+
+Chip name: `PC  // 16-bit counter`
+
+Input: `in[16], inc, load, reset`
+
+Output: `out[16]`
+
+Function: 
+```
+If reset(t-1) then out(t)\0
+ else if load(t-1) then out(t)\in(t-1)
+  else if inc(t-1) then out(t)\out(t-1)+1
+   else out(t)\out(t-1)
+```
+
+Comment: `"\" - is a 16-bit operation. "+" is 16-bit arithmetic addition.`
+
+### My implementation:
+![PC](image/PC.png)
+
 </details>
 
 <details>
