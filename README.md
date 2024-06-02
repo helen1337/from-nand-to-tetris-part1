@@ -457,6 +457,54 @@ The overflow bit is ignored.
 
 <details>
 
+<summary>project3 : Memory</summary>
+
+### DFF (given)
+
+ Chip name: `DFF`
+
+ Input: `in`
+
+ Output: `out`
+
+ Function: `out(t)=in(t-1)`
+
+ Comment: 
+```
+This clocked gate has a built-in
+implementation and thus there is
+no need to implement it.
+```
+
+### My implementation:
+
+![Inc16](image/Inc16.png)
+
+### Bit
+
+ Chip name: `Inc16`
+
+ Input: `in[16]`
+
+ Output: `out[16]`
+
+ Function: `out = in + 1. The overflow bit is ignored.`
+
+### My implementation:
+
+![Inc16](image/Inc16.png)
+
+### Register
+### RAM8
+### RAM64
+### RAM512
+### RAM4K
+### RAM16K
+### PC
+</details>
+
+<details>
+
 <summary>project5 : Computer Architecture</summary>
 
 ## Memory 
