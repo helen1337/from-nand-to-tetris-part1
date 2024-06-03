@@ -624,7 +624,7 @@ while(0) {
  else call black();
 }
 
-white() {
+white() {    // checks that the screen is white
  now=0;
  check = now - prev; // if 0 - do nothing
  prev = 0;           // remember last state
@@ -632,7 +632,7 @@ white() {
  else call clear();
 }
 
-black() {
+black() {    // checks that the screen is black
  not=-1;
  check = now - prev;
  prev = -1;
@@ -642,7 +642,7 @@ black() {
 
 clear() {
  for(i=8191,i>=0,i--) {
-  RAM[SCREEN+i]=0;   // SCREEN= the start register of the screen
+  RAM[SCREEN+i]=0;   // SCREEN =  initial screen register
  }
 }
 
