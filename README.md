@@ -648,7 +648,7 @@ clear() {
 
 fill() {
   for(i=8191,i>=0,i--) {
-  RAM[SCREEN+i]=-1;   // SCREEN= the start register of the screen
+  RAM[SCREEN+i]=-1;   // SCREEN = the start register of the screen
  }
 }
 ```
