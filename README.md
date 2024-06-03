@@ -633,7 +633,7 @@ white() {    // checks that the screen is white
 }
 
 black() {    // checks that the screen is black
- not=-1;
+ now=-1;
  check = now - prev;
  prev = -1;
  if(check==0) return;
