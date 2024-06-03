@@ -590,6 +590,73 @@ Comment: `"\" - is a 16-bit operation. "+" is 16-bit arithmetic addition.`
 
 <details>
 
+<summary>project4 : Machine Language</summary>
+
+## Multiplication Program (Mult.asm): 
+The inputs of this program are the current values stored in `R0` and
+`R1` (i.e., the two top RAM locations). The program computes the product `R0*R1` and stores the result in
+`R2`. We assume (in this program) that `R0>=0`, `R1>=0`, and `R0*R1<32768`. Your program need not test
+these conditions, but rather assume that they hold. The supplied Mult.tst and Mult.cmp scripts will test
+your programon several representative data values.
+
+Pseudocode:
+```
+R2 = 0;
+for (i=R1,i>=0,i--) {
+ R2 += R0;
+}
+```
+
+## I/O-Handling Program (Fill.asm): 
+This program runs an infinite loop that listens to the keyboard input.
+When a key is pressed (any key), the program blackens the screen, namely, writes “black” in every pixel.
+When no key is pressed, the screen should be cleared. You may choose to blacken and clear the screen in
+any spatial order, as long as pressing a key continuously for long enough will result in a fully blackened
+screen and not pressing any key for long enough will result in a cleared screen. This program has a test
+script (Fill.tst) but no compare file—it should be checked by visibly inspecting the simulated screen.
+
+Pseudocode:
+```
+prev=0;
+
+while(0) {
+ if(kbd==0) call white();
+ else call black();
+}
+
+white() {
+ now=0;
+ check = now - prev; // if 0 - do nothing
+ prev = 0;           // remember last state
+ if(check==0) return;
+ else call clear();
+}
+
+black() {
+ not=-1;
+ check = now - prev;
+ prev = -1;
+ if(check==0) return;
+ else call fill();
+}
+
+clear() {
+ for(i=8191,i>=0,i--) {
+  RAM[SCREEN+i]=0;   // SCREEN= the start register of the screen
+ }
+}
+
+fill() {
+  for(i=8191,i>=0,i--) {
+  RAM[SCREEN+i]=-1;   // SCREEN= the start register of the screen
+ }
+}
+```
+
+</details>
+
+<details>
+
 <summary>project5 : Computer Architecture</summary>
 
 ## Memory 
