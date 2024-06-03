@@ -526,18 +526,43 @@ Comment: `"\" is a 16-bit operation.`
 ### My implementation:
 
 ### RAM8
+Chip name: `RAM8`
+
+Input: `in[16], address[3], load`
+
+Output: `out[16]`
 ![RAM8](image/RAM8.png)
 
 ### RAM64
+Chip name: `RAM64`
+
+Input: `in[16], address[6], load`
+
+Output: `out[16]`
 ![RAM64](image/RAM64.png)
 
 ### RAM512
+Chip name: `RAM512`
+
+Input: `in[16], address[9], load`
+
+Output: `out[16]`
 ![RAM512](image/RAM512.png)
 
 ### RAM4K
+Chip name: `RAM4K`
+
+Input: `in[16], address[12], load`
+
+Output: `out[16]`
 ![RAM4K](image/RAM4K.png)
 
 ### RAM16K
+Chip name: `RAM16K`
+
+Input: `in[16], address[14], load`
+
+Output: `out[16]`
 ![RAM4K](image/RAM4K.png)
 
 ## PC
