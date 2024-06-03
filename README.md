@@ -5,7 +5,7 @@ in this repository I implement all the tasks from the course Build a Modern Comp
 # projects tasks
 <details>
 
-<summary>project1 : Boolean Logic</summary>
+<summary>project1: Boolean Logic</summary>
 
 ## Nand (given)
 Chip name: `Nand`
@@ -330,7 +330,7 @@ else if (sel==111) then {a, b, c,…, h} = {0,0,0,0,0,0,0,1}
 
 <details>
 
-<summary>project2 : Boolean Arithmetic</summary>
+<summary>project2: Boolean Arithmetic</summary>
 
 ## HalfAdder
 Chip name: `HalfAdder`
@@ -457,7 +457,7 @@ The overflow bit is ignored.
 
 <details>
 
-<summary>project3 : Memory</summary>
+<summary>project3: Memory</summary>
 
 ## DFF (given)
 
@@ -590,7 +590,7 @@ Comment: `"\" - is a 16-bit operation. "+" is 16-bit arithmetic addition.`
 
 <details>
 
-<summary>project4 : Machine Language</summary>
+<summary>project4: Machine Language</summary>
 
 ## Multiplication Program (Mult.asm): 
 The inputs of this program are the current values stored in `R0` and
@@ -657,7 +657,7 @@ fill() {
 
 <details>
 
-<summary>project5 : Computer Architecture</summary>
+<summary>project5: Computer Architecture</summary>
 
 ## Memory 
 
