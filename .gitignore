@@ -1,4 +1,5 @@
 .gitattributes
+/project6/Assembler/.gitignore
 /project6/Assembler/Assembler.iml
 /project6/Assembler/.git
 /project6/Assembler/.idea
