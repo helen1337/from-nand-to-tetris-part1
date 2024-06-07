@@ -1,7 +1,13 @@
 # from-nand-to-tetris
 
-in this repository I implement all the tasks from the course Build a Modern Computer from First Principles: From Nand to Tetris (Project-Centered Course).
-
+In this repository I implement all the tasks from the course Build a Modern Computer from First Principles: From Nand to Tetris (Project-Centered Course) Part I (Part II is coming).
+I take the course on [coursera](https://coursera.org/share/c4583b709272444e504a4562e1cfa0b8).
+Course Resources:: 
+* [From Nand to Tetris website](https://www.nand2tetris.org/)
+* [IDE](https://nand2tetris.github.io/web-ide/chip/)
+* Book: The Elements of Computing Systems: Building a Modern Computer from First Principles by Noam Nisan, Shimon Schocken
+Russian edition: Ноам Нисан, Шимон Шокен. Архитектура компьютерных систем. Как собрать современный компьютер по всем правилам
+ 
 # projects tasks
 <details>
 
