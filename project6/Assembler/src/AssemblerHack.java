@@ -10,8 +10,8 @@ import java.util.Objects;
 public class AssemblerHack {
     private final static AssemblerHack hack = new AssemblerHack();
     private final HackSymbolTable symbolTable = new HackSymbolTable();
-    int variableAddress = 16;
-    int commandAddress = 0;
+    private int variableAddress = 16;
+    private int commandAddress = 0;
     private static ArrayList<String> code = new ArrayList<>();
 
     /**
