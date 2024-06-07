@@ -9,7 +9,7 @@ Course Resources:
 * Book: The Elements of Computing Systems: Building a Modern Computer from First Principles by Noam Nisan, Shimon Schocken
 >Russian edition: Ноам Нисан, Шимон Шокен. Архитектура компьютерных систем. Как собрать современный компьютер по всем правилам
  
-# projects tasks
+# projects
 <details>
 
 <summary>project1: Boolean Logic</summary>
