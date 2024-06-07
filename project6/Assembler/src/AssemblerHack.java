@@ -30,7 +30,7 @@ public class AssemblerHack {
         }
         if (Objects.nonNull(file)) {
             hack.fillHackMap(file);
-            code = hack.HackCode(file);
+            code = hack.hackCode(file);
             createAndWriteHackFile(code, nameHackFile(locationAsmFile));
         }
     }
@@ -57,7 +57,7 @@ public class AssemblerHack {
      * @param file the Parser object that reads the .asm file
      * @return a list of Hack machine code instructions
      */
-    private ArrayList<String> HackCode(Parser file) {
+    private ArrayList<String> hackCode(Parser file) {
         while (file.hasMoreLines()) {
             InstructionType type = file.instructionType();
             switch (type) {
