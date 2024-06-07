@@ -1,4 +1,4 @@
-# from-nand-to-tetris
+# from-nand-to-tetris-part1
 
 In this repository I implement all the tasks from the course Build a Modern Computer from First Principles: From Nand to Tetris (Project-Centered Course) Part I (Part II is coming).
 I took the course on [coursera](https://coursera.org/share/c4583b709272444e504a4562e1cfa0b8).
