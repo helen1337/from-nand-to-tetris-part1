@@ -563,7 +563,7 @@ Chip name: `RAM16K`
 Input: `in[16], address[14], load`
 
 Output: `out[16]`
-![RAM4K](image/RAM16K.png)
+![RAM16K](image/RAM16K.png)
 
 ## PC
 
