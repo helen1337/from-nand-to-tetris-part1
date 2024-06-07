@@ -767,3 +767,72 @@ via the keyboard.
 ![Computer](image/Computer.png)
 
 </details>
+
+
+
+<details>
+
+<summary>project6: Assembler</summary>
+
+## Objective:
+
+ Develop an assembler that translates programs written in the Hack assembly language into Hack
+binary code. This version of the assembler assumes that the source assembly code is valid. Error
+checking, reporting and handling can be added to later versions of the assembler, but are not part
+of this project. 
+>There is no this function in my code yet, it is assumed that my interpretation is always correct :)
+
+## Implementation
+In the textbook, the course teachers suggest initializing an object of the Parser class by opening a file. I preferred to open the file once and write all the information into the program at once, using try-with-resources block to avoid breaking the file. But in order to preserve the API proposed by the authors, I simulated iteration through the file by ordinary passage through the list, creating a index inside the class, which is controlled by the methods `hasMoreLines()`, `advance()` and `jumpFirst()` (to return the label to the beginning).
+
+### classes:
+
+* `AssemblerHack.java` class translates Hack assembly language mnemonics into Hack binary code.
+>The main class that manages the entire process of building a binary program, using the instance of the `Parser` class to access the .asm file, the instance of the `HackSymbolTable` class to access labels and variables addresses, and the `Code` utility class to obtain binary representations of decimal values ​​and mnemonics. The result (binary program) is collected in `ArrayList code`, then written to the created .hack file, under the control of `AssemblerHack` instance methods.
+
+* `HackSymbolTable.java` manages a symbol table that associates symbolic labels with numeric addresses. This is used in the context of the Hack computer system.
+#### API:
+`HackSymbolTable()` - constructs a new HackSymbolTable and initializes it with predefined symbols.
+
+`addEntry(String symbol, int address)` - adds the pair (symbol, address) to the table.
+
+`contains(String symbol)` - does the symbol table contain the given symbol?
+
+`getAddress(String symbol)` - returns the address associated with the given symbol.
+
+* `Parser.java` - The Parser class is used to read and parse assembly language files.
+>The Parser module provides access to the input assembly code. In particular, it provides a convenient means of moving through source code, skipping comments and whitespace, and breaking down each symbolic command into its basic components.
+#### API:
+`Parser(String location)` - creates a Parser object and initializes it with a List program, which will be filled in as the file is read, located at location.
+
+`getInstruction()` - returns the current instruction.
+
+`hasMoreLines()` - are there more commands in the input?
+
+`jumpFirst()` - resets the instruction pointer to the first instruction.
+
+`advance()` - read the next command from the input and makes it hte current command.
+
+`instructionType()` - returns the type of the current instruction:
+> A_INSTRUCTION for @xxx where xxx is either a symbol or a decimal number
+
+>C_INSTRUCTION for dest=comp;jump
+
+>L_INSTRUCTION (actually, pseudo-command) for (xxx) where xxx is a symbol
+
+`dest()` - returns the destination mnemonic in the current C-instruction.
+
+`comp()` - returns the computation mnemonic in the current C-instruction.
+
+`jump()` - returns the jump mnemonic in the current C-instruction.
+
+* `InstructionType.java` - The InstructionType enum represents the different types of instructions in the Hack assembly language.
+
+* `Code.java` - the utility class contains static methods to convert assembly language mnemonics into their corresponding binary codes for the Hack computer. This class uses value maps for comp and jump mnemonics - compMap and jumpMap.
+#### API:
+`dest(String dest)` - returns the binary code of the dest mnemonic.
+`comp(String comp)` - returns the binary code of the comp mnemonic.
+`jump(String jump)` - returns the binary code of the jump mnemonic.
+`bits(int n)` - converts an integer to its 15-bit binary representation.
+
+</details>
