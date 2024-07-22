@@ -21,7 +21,6 @@ public class AssemblerHack {
      */
     public static void main(String[] args) {
         String locationAsmFile = args[0];
-        System.out.println("kek");
         Parser file = null;
         try {
              file = new Parser(locationAsmFile);
